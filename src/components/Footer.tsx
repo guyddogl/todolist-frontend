@@ -6,7 +6,12 @@ export function Footer() {
   return (
     <Grid>
       <Grid.Col span={12}>
-        <Divider my="xs" label={`© ${year} ToDo List - All rights reserved`} labelPosition="center" style={{color: '#868e96'}}/>
+        <Divider 
+          my="xs" 
+          label={`© ${year} ToDo List - All rights reserved`} 
+          labelPosition="center"
+          color="#228be6"
+        />
       </Grid.Col>
     </Grid>
   );
