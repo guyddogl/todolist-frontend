@@ -6,7 +6,7 @@ import { IconHome, IconArticle, IconBrandWechat  } from '@tabler/icons-react';
 export function Header() {
 
   const matches = useMediaQuery('(max-width: 790px)');
-  const matchesXS = useMediaQuery('(max-width: 460px)');
+  const matchesXS = useMediaQuery('(max-width: 510px)');
   const iconSize = 20;
   const menuItems = [
     { text: 'Home', variant: 'light', icon: <IconHome width={iconSize} height={iconSize}/>, disabled: false},
@@ -18,7 +18,7 @@ export function Header() {
     <Grid mt={2} justify="space-around" align="center">
       <Grid.Col span={matchesXS ? 2 : 3} style={{border: '0px solid #000'}}>
         <Flex align="center" justify="center">
-          <Avatar color="light" mr={3} size={`${matches ? 'sm' : 'md'}`}>
+          <Avatar color="light" mr={3} size="md">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-checkbox" width={`${matches ? '24' : '30'}`} height={`${matches ? '24' : '30'}`} viewBox="0 0 24 24" strokeWidth="2" stroke="#228be6" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
               <path d="M9 11l3 3l8 -8"></path>
@@ -37,7 +37,7 @@ export function Header() {
       </Grid.Col>
       <Grid.Col span={2} style={{border: '0px solid #000'}}>
         <Flex align="center" justify="center">
-          <Avatar src={null} alt="no image here" color="light" size={`${matches ? 'sm' : 'md'}`}/>
+          <Avatar src={null} alt="Usuário" color="light" size="md"/>
         </Flex>
       </Grid.Col>
     </Grid>
