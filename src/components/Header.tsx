@@ -38,7 +38,7 @@ export function Header({matches, matchesXS}: IHeader) {
               ))}
             </Flex>
           </Grid.Col>
-          <Grid.Col span={2}>
+          <Grid.Col span={matchesXS ? 2 : 3}>
             <Flex align="center" justify="center">
               <Avatar src={null} alt="Usuário" color="light" size="md"/>
             </Flex>
