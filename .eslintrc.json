@@ -6,7 +6,8 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
     ],
     "overrides": [],
     "parser": "@typescript-eslint/parser",
@@ -17,7 +18,8 @@
     "plugins": [
         "react",
         "@typescript-eslint",
-        "eslint-plugin-import-helpers"
+        "eslint-plugin-import-helpers",
+        "prettier"
     ],
     "settings": {
         "react": {
@@ -25,6 +27,7 @@
         }
     },
     "rules": {
+        "eslint-config-prettier": true,
         "indent": [
             "error",
             "tab"
