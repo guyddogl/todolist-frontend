@@ -13,8 +13,12 @@ export function ButtonHeader({text, variant, icon, disabled}: IButtonHeader) {
 
   return (
     <Tooltip label={text} color="#228be6" withArrow disabled={mdUp}>
-      <Button variant={variant} leftIcon={mdUp && icon} style={{minWidth: `${mdUp ? '115px' : '0px'}`}} disabled={disabled}>
-        {mdUp ? text : icon }
+      <Button variant={variant} leftIcon={mdUp && icon} style={{width: `${mdUp ? '115px' : '60px'}`, transition: 'all 1s ease'}} disabled={disabled}>
+        {mdUp ? 
+        <span style={{transition: 'all 0.8s ease'}}>{text}</span> 
+        : 
+        <span style={{transition: 'all 0.8s ease'}}>{icon}</span>
+        }
       </Button>
     </Tooltip>
   );
