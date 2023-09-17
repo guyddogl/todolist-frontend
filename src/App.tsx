@@ -1,15 +1,15 @@
 import { Container, Center, Loader } from '@mantine/core';
-import { Header, Footer } from './components'
-import { useMediaQuery } from '@mantine/hooks';
+import { Header, Footer, ScrollToTop, ButtonHeader } from './components'
+import { useAppContext } from './context';
 
 function App() {
   // const api = import.meta.env.VITE_API_KEY;
-  const matches = useMediaQuery('(max-width: 790px)');
-  const matchesXS = useMediaQuery('(max-width: 510px)');
+  const { breakpoint } = useAppContext();
+  console.log('breakpoint App', breakpoint)
 
   return (
     <>
-      {matches === undefined || matchesXS === undefined ? (
+      {breakpoint === true ? (
         <Container size="xs">
           <Center style={{ minHeight: '90vh'}}>
             <Loader />
@@ -17,8 +17,13 @@ function App() {
         </Container>
       ) : (
         <>
-          <Header matches={matches} matchesXS={matchesXS} />
+          <Header />
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <ButtonHeader text='teste' variant='light' icon={<div></div>}disabled={false} />
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
           <Footer />
+          <ScrollToTop />
         </>
       )}
     </>
