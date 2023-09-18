@@ -11,6 +11,7 @@ export function Home() {
   const [, setItems] = useState<IItems[]>([]);
   const [input, setInput] = useState<string>('');
   const [inputEdit, setInputEdit] = useState<string>('');
+  const [inputEditActual, setInputEditActual] = useState<string>('');
   const [updateList, setUpdateList] = useState<boolean>();
   const [openedDeleteAllItems, { close: closeDeleteAllItems, open: openDeleteAllItems }] = useDisclosure(false);
   const [openedEditItem, { close: closeEditItem, open: openEditItem }] = useDisclosure(false);
@@ -149,28 +150,29 @@ export function Home() {
   return (
     <>
       <Notifications position="top-center"/>
-      <Modal opened={openedDeleteAllItems} onClose={close} size="auto" title="Excluir todos os items">
+      <Modal opened={openedDeleteAllItems} onClose={closeDeleteAllItems} size="md" title="Excluir todos os items" xOffset={0}>
         <Text>Tem certeza que deseja excluir todos os items da lista?</Text>
         <Flex justify='end'>
           <Group mt="xl">
             <Button variant="outline" color='red' onClick={() => { deleteAllItems() }}>
               Sim
             </Button>
-            <Button variant="filled" onClick={close}>
+            <Button variant="filled" onClick={closeDeleteAllItems}>
               Não
             </Button>
           </Group>
         </Flex>
       </Modal>
-      <Modal opened={openedEditItem} onClose={closeEditItem} size="md" title="Atualizar item">
+      <Modal opened={openedEditItem} onClose={closeEditItem} size="md" title="Atualizar item" xOffset={0}>
           <Input
-            placeholder="Digite o nome do item"
+            placeholder="Altere o nome do item"
             value={inputEdit}
             onChange={(e) => setInputEdit(e.target.value)}
+            error={inputEdit.length <= 0}
           />
         <Flex justify='end'>
           <Group mt="xl">
-            <Button variant="filled" onClick={() => { }}>
+            <Button variant="filled" onClick={() => { }} disabled={inputEdit.length <= 0 || inputEdit === inputEditActual}>
               Salvar
             </Button>
             <Button variant="subtle" onClick={closeEditItem}>
@@ -229,6 +231,7 @@ export function Home() {
                 compact
                 onClick={() => {
                   setInputEdit(item.name);
+                  setInputEditActual(item.name);
                   openEditItem();
                 }}
               >
