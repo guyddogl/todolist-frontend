@@ -13,17 +13,17 @@ export function Header() {
   ]
 
   return (
-    <Grid mt={12} justify="space-around" align="center">
+    <Grid mt={12} justify="space-evenly" align="center">
       <Grid.Col span={2}>
         <Flex align="center" justify="center">
-          <Avatar color="light" mr={3} size="md">
+          <Avatar color="light" mr={3} size="sm">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-checkbox" width={30} height={30} viewBox="0 0 24 24" strokeWidth="2" stroke="#228be6" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
               <path d="M9 11l3 3l8 -8"></path>
               <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
             </svg>
           </Avatar>
-          <Title order={4} color="#868e96" style={{lineHeight: '0.86'}}>ToDo List</Title>
+          <Title order={4} color="#868e96" style={{lineHeight: '0.86', maxWidth: '50px'}}>ToDo List</Title>
         </Flex>
       </Grid.Col>
       <Grid.Col span={6}>
