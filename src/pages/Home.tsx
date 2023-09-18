@@ -8,12 +8,21 @@ import { Notifications, notifications } from '@mantine/notifications';
 import { useDisclosure } from '@mantine/hooks';
 
 export function Home() {
-  const [items, setItems] = useState<IItems[]>([]);
+  const [, setItems] = useState<IItems[]>([]);
   const [input, setInput] = useState<string>('');
   const [inputEdit, setInputEdit] = useState<string>('');
   const [updateList, setUpdateList] = useState<boolean>();
   const [openedDeleteAllItems, { close: closeDeleteAllItems, open: openDeleteAllItems }] = useDisclosure(false);
   const [openedEditItem, { close: closeEditItem, open: openEditItem }] = useDisclosure(false);
+
+  const items = [
+    {id: 1, name: 'item 1', checked: false, modified: ''},
+    {id: 2, name: 'item 2', checked: false, modified: ''},
+    {id: 3, name: 'item 3', checked: false, modified: ''},
+    {id: 4, name: 'item 4', checked: false, modified: ''},
+    {id: 5, name: 'item 5', checked: false, modified: ''},
+    {id: 6, name: 'item 6', checked: false, modified: ''},
+  ]
 
   useEffect(() => {
     const getAllItems = async () => {
