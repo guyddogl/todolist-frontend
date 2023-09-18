@@ -154,11 +154,11 @@ export function Home() {
         <Text>Tem certeza que deseja excluir todos os items da lista?</Text>
         <Flex justify='end'>
           <Group mt="xl">
-            <Button variant="outline" color='red' onClick={() => { deleteAllItems() }}>
-              Sim
-            </Button>
             <Button variant="filled" onClick={closeDeleteAllItems}>
               Não
+            </Button>
+            <Button variant="outline" color='red' onClick={() => { deleteAllItems() }}>
+              Sim
             </Button>
           </Group>
         </Flex>
@@ -172,11 +172,11 @@ export function Home() {
           />
         <Flex justify='end'>
           <Group mt="xl">
-            <Button variant="filled" onClick={() => { }} disabled={inputEdit.length <= 0 || inputEdit === inputEditActual}>
-              Salvar
-            </Button>
             <Button variant="subtle" onClick={closeEditItem}>
               Cancelar
+            </Button>
+            <Button variant="filled" onClick={() => { }} disabled={inputEdit.length <= 0 || inputEdit === inputEditActual}>
+              Salvar
             </Button>
           </Group>
         </Flex>
