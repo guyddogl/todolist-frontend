@@ -5,9 +5,9 @@ import { Footer } from './Footer';
 import { ScrollToTop } from './ScrollToTop';
 
 export {
-  ButtonHeader,
-  Checkbox,
-  Header,
-  Footer,
-  ScrollToTop
-}
+	ButtonHeader,
+	Checkbox,
+	Header,
+	Footer,
+	ScrollToTop,
+};

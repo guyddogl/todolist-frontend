@@ -7,38 +7,38 @@ type Breakpoints = {
 };
 
 export function useBreakpoint(direction: 'up' | 'down', breakpoint: keyof Breakpoints) {
-  const [isGreaterThanBreakpoint, setIsGreaterThanBreakpoint] = useState(false);
-  const [isSmallerThanBreakpoint, setIsSmallerThanBreakpoint] = useState(false);
-  
-  const breakpoints: Breakpoints = {
-    sm: 600,
-    md: 900,
-    lg: 1200,
-  }
+	const [isGreaterThanBreakpoint, setIsGreaterThanBreakpoint] = useState(false);
+	const [isSmallerThanBreakpoint, setIsSmallerThanBreakpoint] = useState(false);
 
-  useEffect(() => {
-    function handleResize() {
-      if (direction === 'up') {
-        const matches = window.matchMedia(`(min-width: ${breakpoints[breakpoint]}px)`).matches;
-        setIsGreaterThanBreakpoint(matches);
-      } else {
-        const matches = window.matchMedia(`(max-width: ${breakpoints[breakpoint]}px)`).matches;
-        setIsSmallerThanBreakpoint(matches);
-      }
-    }
+	const breakpoints: Breakpoints = {
+		sm: 600,
+		md: 900,
+		lg: 1200,
+	};
 
-    window.addEventListener('resize', handleResize);
+	useEffect(() => {
+		function handleResize() {
+			if (direction === 'up') {
+				const matches = window.matchMedia(`(min-width: ${breakpoints[breakpoint]}px)`).matches;
+				setIsGreaterThanBreakpoint(matches);
+			} else {
+				const matches = window.matchMedia(`(max-width: ${breakpoints[breakpoint]}px)`).matches;
+				setIsSmallerThanBreakpoint(matches);
+			}
+		}
 
-    handleResize();
+		window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [breakpoint, direction]);
+		handleResize();
 
-  if (direction === 'up') {
-    return isGreaterThanBreakpoint;
-  }
-  
-  return isSmallerThanBreakpoint;
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, [breakpoint, direction]);
+
+	if (direction === 'up') {
+		return isGreaterThanBreakpoint;
+	}
+
+	return isSmallerThanBreakpoint;
 }

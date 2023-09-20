@@ -1,5 +1,5 @@
-import { useBreakpoint } from "./useBreakpoints"
+import { useBreakpoint } from './useBreakpoints';
 
-export { 
-  useBreakpoint
-}
+export {
+	useBreakpoint,
+};

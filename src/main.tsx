@@ -5,8 +5,8 @@ import App from './App.tsx';
 import './assets/styles/global.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  // <React.StrictMode>
-  <AppProvider>
-    <App />
-  </AppProvider>
-)
+	// <React.StrictMode>
+	<AppProvider>
+		<App />
+	</AppProvider>,
+);
